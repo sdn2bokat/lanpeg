@@ -1,53 +1,62 @@
+import './globals.css'
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import './globals.css'
 import Header from '@/app/components/Layout/Header'
 import Footer from '@/app/components/Layout/Footer'
 import ScrollToTop from '@/app/components/ScrollToTop'
 import Aoscompo from '@/utils/aos'
+import LoadingOverlay from './components/LoadingOverlay'
 
 export const metadata: Metadata = {
-  title: "SD NEGERI 2 BOKAT",
+  title: "SD Negeri 2 Bokat/ SD Pembina Kab. Buol",
   description:
-    "SiDi adalah platform resmi untuk penjualan dan layanan digital seperti aplikasi web, dokumen digital, dan desain digital. Solusi digitalisasi administrasi dan informasi terpadu untuk produktivitas Anda.",
+    "Website Resmi SD Negeri 2 Bokat | Kami berkomitmen untuk menghadirkan layanan pendidikan yang berkualitas, transparan, dan mudah diakses. Semoga website ini menjadi jendela informasi bagi siswa, guru, orang tua, serta masyarakat.",
   keywords: [
-    "SiDi",
-    "Sistem Digitalisasi",
-    "Digitalisasi Administrasi",
-    "Produk Digital",
-    "Aplikasi Web",
-    "Desain Digital",
-    "Dokumen Digital",
-    "Layanan Digital",
-    "SiDi Indonesia",
-    "sidi.my.id"
+    "sdn 2 bokat",
+    "SDN Pembina Buol",
+    "sdn2bokat",
+    "Layanan SDN 2 Bokat",
+    "Profil SDN 2 Bokat",
+    "Dapodik SDN 2 Bokat",
+    "PPDB SDN 2 Bokat",
+    "Digital SDN 2 Bokat",
+    "Aplikasi cek ijazah",
+    "www.sdn2bokat.sch.id",
+    "Berita SDN 2 Bokat",
+    "Pengumuman SDN 2 Bokat",
+    "web sdn 2 bokat",
+    "portal sdn 2 bokat",
+    "SDN Bokat",
+    "40202114",
+    "sdn 2",
+    "SD Negeri 2"
   ],
   alternates: {
-    canonical: "https://sidi.my.id",
+    canonical: "https://sdn2bokat.sch.id",
   },
   openGraph: {
-    title: "SiDi | Sistem Digitalisasi",
+    title: "Website SD Negeri 2 Bokat/ SD Pembina Kab. Buol",
     description:
-      "Solusi Digital Administrasi dan Informasi Terpadu. Temukan aplikasi, dokumen, dan desain digital untuk mendukung produktivitas Anda.",
-    url: "https://sidi.my.id",
-    siteName: "SiDi",
+      "Kami berkomitmen untuk menghadirkan layanan pendidikan yang berkualitas, transparan, dan mudah diakses. Semoga website ini menjadi jendela informasi bagi siswa, guru, orang tua, serta masyarakat.",
+    url: "https://sdn2bokat.sch.id",
+    siteName: "Website SD Negeri 2 Bokat",
     locale: "id_ID",
     type: "website",
     images: [
       {
-        url: "https://www.sidi.my.id/images/hero/banner.webp", // ganti dengan gambar Anda
+        url: "https://sdn2bokat.sch.id/images/sdn2bokat.webp", // ganti dengan gambar Anda
         width: 1200,
         height: 630,
-        alt: "SiDi | Sistem Digitalisasi",
+        alt: "SD Negeri 2 Bokat/ SD Pembina Kab. Buol",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SiDi | Sistem Digitalisasi",
+    title: "SD Negeri 2 Bokat/ SD Pembina Kab. Buol",
     description:
-      "Solusi Digital Administrasi dan Informasi Terpadu untuk produktivitas Anda.",
-    images: ["https://www.sidi.my.id/images/hero/banner.webp"],
+      "Website Resmi SD Negeri 2 Bokat | Kami berkomitmen untuk menghadirkan layanan pendidikan yang berkualitas, transparan, dan mudah diakses. Semoga website ini menjadi jendela informasi bagi siswa, guru, orang tua, serta masyarakat.",
+    images: ["https://sdn2bokat.sch.id/images/sdn2bokat.webp"],
   },
   robots: {
     index: true,
@@ -68,6 +77,7 @@ export default function RootLayout({
   return (
     <html lang='id' suppressHydrationWarning>
       <body className={`${font.className}`}>
+        <LoadingOverlay />
         <Aoscompo>
           <Header />
           {children}

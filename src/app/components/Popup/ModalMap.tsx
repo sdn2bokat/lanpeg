@@ -9,7 +9,7 @@ export default function ModalMap() {
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
-
+ 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';

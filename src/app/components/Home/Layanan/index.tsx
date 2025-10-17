@@ -197,7 +197,7 @@ Pastikan alamat email yang Anda masukkan benar.
                 {[
                   { label: "Profil Sekolah", url: "/tentang#pvmsekolah", icon: "fluent-color:building-government-search-32", text: "w-12 h-12 mb-2" },
                   { label: "Transparansi", url: "/page/maintenance", icon: "fluent-color:chart-multiple-32", text: "w-12 h-12 mb-2" },
-                  { label: "Rapor Pendidikan", url: "/page/maintenance", icon: "fluent-color:certificate-32", text: "w-12 h-12 mb-2" },
+                  { label: "Rapor Pendidikan", url: "/page/rapor_pendidikan", icon: "fluent-color:certificate-32", text: "w-12 h-12 mb-2" },
                   { label: "Kalender Kegiatan Sekolah", url: "/page/maintenance", icon: "fluent-color:calendar-edit-32", text: "w-12 h-12 mb-2" },
                   { label: "Kotak Saran dan Pengaduan", url: "/page/maintenance", icon: "fluent-color:drafts-16", text: "w-12 h-12 mb-2" },
                   { label: "Permohonan Informasi Publik", url: "/page/maintenance", icon: "fluent-color:library-32", text: "w-12 h-12 mb-2" },
