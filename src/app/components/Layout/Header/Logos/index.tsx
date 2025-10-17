@@ -7,7 +7,7 @@ interface LogosProps {
 const Logos: React.FC<LogosProps> = ({ variant = "white" }) => {
   return (
       <Image
-        src={variant === "colored" ? "/images/logo/logo-b.png" : "/images/logo/logo-w.png"}
+        src={variant === "colored" ? "/images/logo/logo-b.png" : "/images/logo/logo-head.svg"}
         alt='logo'
         width={219}   // ukuran maksimum (untuk SEO dan layout)
         height={50}   // ukuran maksimum

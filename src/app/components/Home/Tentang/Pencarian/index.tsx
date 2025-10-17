@@ -54,9 +54,8 @@ export default function SearchSection() {
 };
 
   return (
-  <div className="relative w-full mb-1 bg-midnight_text">
-    <div className="max-w-xl sm:max-w-[720px] mx-auto py-4">
-        <div className='container'>
+  <div className="relative w-full mb-1">
+    <div className="max-w-xl sm:max-w-[720px] mx-auto p-4">
       {/* Input dan tombol cari */}
       <div className="relative">
       <div className="flex items-center bg-white shadow border border-gray-300 overflow-hidden">
@@ -69,7 +68,7 @@ export default function SearchSection() {
         />
         <button
           onClick={handleSearch}
-          className="transition duration-250 bg-[#FFD60A] hover:bg-header hover:cursor-pointer hover:text-[#FFD60A] px-4 py-2 sm:px-8 sm:py-3 text-sm sm:text-base font-semibold"
+          className="transition duration-250 bg-[#FFD60A] hover:bg-header hover:cursor-pointer hover:text-[#FFD60A] px-2 py-2 sm:px-8 sm:py-3 text-sm sm:text-base font-semibold"
         >
           Cari
         </button>
@@ -95,7 +94,7 @@ export default function SearchSection() {
       )}
       </div>
       </div>
-    </div>
+    
   </div>
   );
 }

@@ -10,7 +10,7 @@ const Rombel = () => {
     { no: 6, rombel: "Kelas 5", tingkat: 5, L: 10, P: 9, total: 19, wali: "Munira, S.Pd", kurikulum: "Kurikulum SD Merdeka", ruang: "RK - 5" },
     { no: 7, rombel: "Kelas 6", tingkat: 6, L: 15, P: 12, total: 27, wali: "Herilani, S.Pd", kurikulum: "Kurikulum SD Merdeka", ruang: "RK - 6" },
   ];
-
+ 
   return (
     <section className='scroll-mt-[130px]' id='rombel'>
       <div className='container'>

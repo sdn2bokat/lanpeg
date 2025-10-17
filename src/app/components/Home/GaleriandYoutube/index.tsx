@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import GaleriAudio from "@/app/components/GaleriAudio";
+import LatestYouTubeVideo from "../../LatesYouTubeVideo";
 
 const GaleriandYoutube = () => {
   const slides = [
@@ -114,22 +115,18 @@ const GaleriandYoutube = () => {
             <div className="flex-1 border-t-2 border-red-600"></div>
             </div>
             <div className="w-full mt-2 aspect-video rounded-xl overflow-hidden shadow-md">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/videoseries?list=UUgKG1VWZmZabSnBrjqdyZfQ"
-                title="YouTube SDN 2 Bokat"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              < div className="w-full h-full">
+              <LatestYouTubeVideo />
+              </div>
             </div>
 
             <Link
-              href="https://www.youtube.com/@sdn2bokat"
+              href="https://www.youtube.com/@sdn2bokat/videos"
               target="_blank"
-              className="mt-4 sm:mt-6 inline-flex items-center gap-2 text-white bg-red-600 hover:bg-red-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-medium transition"
+              className="mt-4 sm:mt-6 inline-flex items-center gap-2 text-white bg-red-600 hover:bg-red-800 px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-sm sm:text-lg font-medium transition"
             >
               <Icon icon="mdi:youtube-subscription" />
-              Kunjungi Channel Kami
+              Video terbaru lainnya
             </Link>
           </div>
         </div>

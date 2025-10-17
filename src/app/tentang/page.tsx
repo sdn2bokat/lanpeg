@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Tentang() {
   return (
     <div className="pt-[72px]">
-      <div className="sticky top-[72px] z-30 bg-white">
+      <div className="sticky top-[69px] z-30 bg-midnight_text">
         <SearchSection />
       </div>
 

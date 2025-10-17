@@ -76,16 +76,16 @@ const Footer = () => {
               Hak Cipta
             </Link> SD Negeri 2 Bokat/ SD Pembina Kab. Buol &copy; 2025-{new Date().getFullYear()}. {' '}
           </h4>
-          <div className='flex gap-5  justify-center items-center md:justify-start'>
+          <div className='flex gap-5 justify-center items-center md:justify-start'>
             <h4 className='text-md font-normal text-white/90 hover:text-[#FFD60A]'>
               <Link href='/page/peta-sekolah'>
                 Peta Sekolah
               </Link>
             </h4>
             <div className='h-5 bg-white opacity-90 w-0.5'></div>
-            <h4 className='text-md font-normal text-white/90 hover:text-[#FFD60A]'>
+            <h4 className='text-md font-normal'>
               <p
-        className="cursor-pointer"
+        className="cursor-pointer text-white/90 hover:text-[#FFD60A]"
         onClick={() => setIsOpen(true)}
       >
         Call Center
