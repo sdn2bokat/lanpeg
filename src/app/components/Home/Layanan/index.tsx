@@ -104,7 +104,7 @@ Pastikan alamat email yang Anda masukkan benar.
       Pilih Jenis Peran
     </label>
     <select
-      className="w-full text-sm sm:text-base border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-800"
+      className="w-full text-sm sm:text-base border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-800 cursor-pointer"
       value={role}
       onChange={(e) => {
         setRole(e.target.value);
@@ -136,7 +136,7 @@ Pastikan alamat email yang Anda masukkan benar.
       Pilih Jenis Layanan
     </label>
     <select
-      className="w-full text-sm sm:text-base border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
+      className="w-full text-sm sm:text-base border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400 cursor-pointer"
       value={service}
       onChange={(e) => setService(e.target.value)}
       disabled={!role}
@@ -155,7 +155,7 @@ Pastikan alamat email yang Anda masukkan benar.
     </select>
   </div>
 </div>
-<div className="flex py-0 justify-center">
+<div className="flex py-0 justify-center transform transition duration-200 ease-in-out hover:scale-105 active:scale-95">
               <button
                 onClick={handleOpen}
                 disabled={!service}
