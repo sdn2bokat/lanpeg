@@ -82,8 +82,8 @@ const Layanan = () => {
               </div>
 
               <div className="bg-orange-100 text-orange-800 p-3 rounded-md mb-5 text-xs sm:text-sm font-medium">
-                <strong>🔔 PERHATIAN!</strong> Beberapa permintaan layanan akan kami kirim melalui email.
-Pastikan alamat email yang Anda masukkan benar. 
+                <strong>🔔 PERHATIAN!</strong> Beberapa permintaan layanan akan kami kirim melalui WhatsApp.
+Pastikan nomor yang Anda masukkan benar. 
               </div>
 
               {/* Dropdown Peran */}

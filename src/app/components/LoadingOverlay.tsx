@@ -14,7 +14,7 @@ export default function LoadingOverlay() {
     // Tunggu render halaman selesai sebelum menghilangkan loading
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 300); // durasi kecil agar transisi tidak terlalu cepat
+    }, 1000); // durasi kecil agar transisi tidak terlalu cepat
 
     return () => clearTimeout(timeout);
   }, [pathname]);
@@ -29,9 +29,6 @@ export default function LoadingOverlay() {
         {/* Lapisan kuning */}
         <div className="absolute inset-0 rounded-full border-4 border-t-yellow-400 border-transparent animate-[spin_1.2s_linear_infinite_reverse]"></div>
       </div>
-      <p className="mt-5 text-blue-700 font-semibold text-sm tracking-wide animate-pulse">
-        Memuat halaman...
-      </p>
     </div>
   );
 }
