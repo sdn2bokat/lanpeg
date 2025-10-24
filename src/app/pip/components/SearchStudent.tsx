@@ -6,6 +6,10 @@ import ConfirmationForm from "./ConfirmationForm";
 import RecommendationForm from "./RecommendationForm";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
+interface SearchStudentProps {
+  data: any[]; // bisa kamu ubah ke tipe data siswa kalau ada
+}
+
 export default function SearchStudent() {
   const supabase = createClientComponentClient();
   const [options, setOptions] = useState<any[]>([]);
