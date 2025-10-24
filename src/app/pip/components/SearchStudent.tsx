@@ -10,7 +10,7 @@ interface SearchStudentProps {
   data: any[]; // bisa kamu ubah ke tipe data siswa kalau ada
 }
 
-export default function SearchStudent() {
+export default function SearchStudent({ data }: SearchStudentProps) {
   const supabase = createClientComponentClient();
   const [options, setOptions] = useState<any[]>([]);
   const [selectedStudent, setSelectedStudent] = useState<any>(null);

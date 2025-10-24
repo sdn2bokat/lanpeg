@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import LeftPanel from "./components/LeftPanel";
-import SearchStudent from "./components/SearchStudent";
 import { supabase } from "@/lib/supabaseClient";
 import LoadingOverlay from "../components/LoadingOverlay";
+import SearchStudent from "./components/SearchStudent";
 
 export default function PIPPage() {
   const [dbData, setDbData] = useState<any[]>([]);
@@ -30,7 +30,7 @@ export default function PIPPage() {
       </div>
 
       <div className="lg:col-span-8">
-        <SearchStudent data={dbData} />
+        <SearchStudent data={dbData}/>
       </div>
     </div>
     <div className="grid grid-cols-2 gap-1">
