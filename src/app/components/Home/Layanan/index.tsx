@@ -4,11 +4,11 @@ import Image from "next/image";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
  
 // Import semua modal
 import IzinAnakModal from "@/app/components/Popup/IzinAnakModal";
 import LolosButuhModal from "@/app/components/Popup/LolosButuhModal";
-import RekomPipModal from "@/app/components/Popup/RekomPipModal";
 import KeaktifanSiswaModal from "@/app/components/Popup/KeaktifanSiswaModal";
 import PengumumanKelulusanModal from "@/app/components/Popup/PengumumanKelulusanModal";
 import ArsipIjazahModal from "@/app/components/Popup/ArsipIjazahModal";
@@ -17,13 +17,14 @@ const Layanan = () => {
   const [role, setRole] = useState("");
   const [service, setService] = useState("");
   const [openModal, setOpenModal] = useState(false);
+  const router = useRouter();
 
   const parentServices = [
     { label: "Permohonan Izin Anak", value: "izinAnak" },
     { label: "Permohonan Lolos Butuh", value: "lolosButuh" },
     { label: "Permohonan Rekomendasi PIP", value: "rekomPip" },
   ];
-
+ 
   const studentServices = [
     { label: "Cek Keaktifan Siswa", value: "keaktifanSiswa" },
     { label: "Cek Pengumuman Kelulusan", value: "pengumumanKelulusan" },
@@ -31,7 +32,15 @@ const Layanan = () => {
   ];
 
   const handleOpen = () => {
-    if (service) setOpenModal(true);
+    if (!service) return;
+
+    if (service === "rekomPip") {
+      // Langsung arahkan ke halaman /pip
+      router.push("/pip");
+      return;
+    }
+
+    setOpenModal(true);
   };
 
   const closeModal = () => setOpenModal(false);
@@ -42,8 +51,6 @@ const Layanan = () => {
         return <IzinAnakModal onClose={closeModal} />;
       case "lolosButuh":
         return <LolosButuhModal onClose={closeModal} />;
-      case "rekomPip":
-        return <RekomPipModal onClose={closeModal} />;
       case "keaktifanSiswa":
         return <KeaktifanSiswaModal onClose={closeModal} />;
       case "pengumumanKelulusan":
