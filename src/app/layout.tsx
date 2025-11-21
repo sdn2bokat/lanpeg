@@ -6,7 +6,7 @@ import Footer from '@/app/components/Layout/Footer'
 import ScrollToTop from '@/app/components/ScrollToTop'
 import Aoscompo from '@/utils/aos'
 import LoadingOverlay from './components/LoadingOverlay'
-<meta name="facebook-domain-verification" content="cgj2xct0n9jy56thy0wlhfzldu2puf" />
+
 export const metadata: Metadata = {
   title: "SD Negeri 2 Bokat/ SD Pembina Kab. Buol",
   description:
@@ -77,6 +77,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='id' suppressHydrationWarning>
+      <head>
+        <meta
+          name="facebook-domain-verification"
+          content="cgj2xct0n9jy56thy0wlhfzldu2puf"
+        />
+      </head>
       <body className={`${font.className}`}>
         <LoadingOverlay />
         <Aoscompo>
