@@ -12,7 +12,6 @@ import LolosButuhModal from "@/app/components/Popup/LolosButuhModal";
 import KeaktifanSiswaModal from "@/app/components/Popup/KeaktifanSiswaModal";
 import PengumumanKelulusanModal from "@/app/components/Popup/PengumumanKelulusanModal";
 import ArsipIjazahModal from "@/app/components/Popup/ArsipIjazahModal";
-import AksesRekomPipModal from "@/app/components/Popup/AksesRekomPipModal";
 
 const Layanan = () => {
   const [role, setRole] = useState("");
