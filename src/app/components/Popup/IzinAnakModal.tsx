@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
-import { X, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import { createClient } from "@supabase/supabase-js";
 import { PDFDocument, rgb, StandardFonts } from "pdf-lib"; // pastikan sudah install pdf-lib
 
@@ -291,35 +291,124 @@ No. WhatsApp: ${formData.whatsapp}`;
 
   // 🔹 Form utama
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-white w-full max-w-lg rounded-2xl shadow-lg overflow-hidden animate-fadeIn">
-        {/* Header */}
-        <div className="flex justify-between items-center px-6 py-4 border-b bg-header text-white">
-          <div className="flex items-center">
-            <Image
-              src="/images/layanan/profil.png"
-              alt="Layanan dan Informasi Sekolah"
-              width={26}
-              height={26}
-              className="mr-3"
-            />
-            <h4 className="text-xl font-semibold text-white">
-              Permohonan Izin Anak
-            </h4>
-          </div>
-          <button
-            onClick={onClose}
-            className="hover:bg-blue-700 p-1 rounded transition-colors cursor-pointer"
-          >
-            <X size={20} />
-          </button>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center"
+      role="dialog"
+      aria-modal="true"
+    >
+
+  {/* Body */}
+  <div
+  className="relative bg-[#FFFFFF] w-full h-screen sm:p-4 overflow-auto sm:overflow-hidden"
+  style={{ borderRadius: 0 }}
+        
+  >
+
+    {/* main content: two columns on large, stacked on small */}
+        <div className="sm:h-full flex flex-col">
+          <div className="h-full flex-1 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
+            {/* RIGHT */}
+            
+            <div className="bg-header sm:rounded-[18px] shadow-xl border-l 
+            sm:border-l-0 pl-5 py-4 sm:pt-7 sm:pl-8 overflow-hidden relative select-none" onContextMenu={(e) => e.preventDefault()}>
+          <div className="prose max-w-none">
+      {/* Logo kiri atas */}
+      <div className="flex">
+        <img
+          src="/images/logo/logo-white.svg"
+          alt="Layanan SD Negeri 2 Bokat"
+          className="h-6 sm:h-12"
+          
+        />
+        <div className='block sm:hidden'>
+          {/* Banner */}
+          <img
+            src="/images/layanan/img_login_mobi.png"
+            alt="Banner Layanan"
+            className="
+              w-42
+              absolute
+              right-0 bottom-0
+            "
+          />
+        </div> 
+      </div>
+
+      {/* Konten utama */}
+      <div className="flex sm:pl-8">
+        {/* Teks + Banner wrapper */}
+        <div className="relative flex pt-4 sm:pt-10">
+          {/* Teks H1 */}
+          <h1 className="text-[22px] sm:text-[50px] text-shadow font-semibold text-white/90 leading-tight z-10">
+            Selamat datang <br/>
+            di <b className="text-[#FFD60A]">Layanan<br/>Orang Tua</b>
+          </h1>
         </div>
+        <div className='hidden sm:block'>
+          {/* Banner */}
+          <img
+            src="/images/layanan/img_login.png"
+            alt="Banner Layanan"
+            className="
+              w-full
+              sm:self-start
+              absolute
+              right-0 bottom-0 
+            "
+          />
+        </div> 
+        </div>
+        </div>
+      </div>
+
+      {/* LEFT: form and logic */}
+      <div className="flex flex-col gap-3 p-4 sm:pb-8 sm:px-8">
+  <div className="flex items-center mb-2 ml-[-18px]">
+  <a
+            onClick={onClose}
+            className="flex items-center gap-1 px-3 py-2 rounded-lg bg-transparent hover:bg-blue-50 transition-colors duration-200 cursor-pointer"
+        >
+        <Icon
+        icon="ion:chevron-back-outline"
+        className="w-5 h-5 font-semibold text-blue-400"
+         />
+        <span className="text-sm font-semibold text-blue-400">
+        Kembali
+        </span>
+          </a>
+          </div>
+          <div className="block sm:hidden flex items-center mb-4">
+    <img
+       src="/images/layanan/ortu-siswa.png"
+       alt="Layanan Orang Tua dan Siswa"
+       className="h-10 sm:h-12 mr-3 sm:mr-4"
+     />
+    <span className="text-[17px] sm:text-[20px] font-semibold text-black leading-tight italic">
+      Permohonan Izin Anak
+      <p className="bg-header border-blue-500 rounded-tl-xl rounded-br-xl px-3 py-[1.5px] text-center text-gray-100 
+      text-[10px] md:text-[14px] font-semibold italic text-shadow">Sistem Layanan Online Khusus Orang Tua</p>
+    </span>
+  </div>
 
         {/* Body */}
         <form
           onSubmit={handleSubmit}
-          className="p-6 space-y-4 max-h-[80vh] overflow-y-auto"
+          className="p-4 space-y-4 w-full sm:max-h-[80vh] overflow-y-auto overflow-x-hidden"
         >
+    <div className="hidden sm:block mb-8">
+    <div className="flex items-center">
+    <img
+       src="/images/layanan/ortu-siswa.png"
+       alt="Layanan Orang Tua dan Siswa"
+       className="h-10 sm:h-12 mr-3 sm:mr-4"
+     />
+    <span className="text-[17px] sm:text-[20px] font-semibold text-black leading-tight italic">
+      Permohonan Izin Anak
+      <p className="bg-header border-blue-500 rounded-tl-xl rounded-br-xl px-3 py-[1.5px] text-center text-gray-100 
+      text-[10px] md:text-[14px] font-semibold italic text-shadow">Sistem Layanan Online Khusus Orang Tua/ Wali</p>
+    </span>
+  </div>
+  </div>
           <div>
             <label className="block text-sm sm:text-base mb-1">Kelas</label>
             <select
@@ -354,9 +443,8 @@ No. WhatsApp: ${formData.whatsapp}`;
           </div>
 
           {/* Tanggal izin */}
-          <div className="flex gap-2">
-            <div className="flex-1">
-              <label className="block text-sm sm:text-base mb-1">Mulai Izin</label>
+          <div className="flex flex-cols gap-2">
+              <label className="block text-sm sm:text-base mb-1">Mulai Izin
               <input
                 type="date"
                 name="tanggalMulai"
@@ -365,9 +453,8 @@ No. WhatsApp: ${formData.whatsapp}`;
                 required
                 className="w-full border border-gray-300 rounded-lg p-2 cursor-pointer"
               />
-            </div>
-            <div className="flex-1">
-              <label className="block text-sm sm:text-base mb-1">Selesai Izin</label>
+            </label>
+              <label className="block text-sm sm:text-base mb-1">Selesai Izin
               <input
                 type="date"
                 name="tanggalSelesai"
@@ -376,7 +463,7 @@ No. WhatsApp: ${formData.whatsapp}`;
                 required
                 className="w-full border border-gray-300 rounded-lg p-2 cursor-pointer"
               />
-            </div>
+            </label>
           </div>
 
           {/* Keterangan */}
@@ -384,7 +471,7 @@ No. WhatsApp: ${formData.whatsapp}`;
             <label className="block text-sm sm:text-base mb-1">Keterangan Izin</label>
             <textarea
               name="alasan"
-              rows={3}
+              rows={2}
               value={formData.alasan}
               onChange={handleChange}
               required
@@ -445,7 +532,7 @@ No. WhatsApp: ${formData.whatsapp}`;
 
           {/* Nomor WhatsApp */}
           <div>
-            <label className="block text-sm font-medium mb-1">Nomor WhatsApp Pemohon</label>
+            <label className="block text-sm font-medium mb-1">WhatsApp Pemohon</label>
             <input
               type="text"
               name="whatsapp"
@@ -458,22 +545,18 @@ No. WhatsApp: ${formData.whatsapp}`;
           </div>
 
           {/* Footer */}
-          <div className="flex justify-end pt-4 border-t">
-            <button
-              type="button"
-              onClick={onClose}
-              className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 mr-2 hover:bg-gray-300 cursor-pointer"
-            >
-              Batal
-            </button>
+          <div className="w-full flex items-center justify-center pt-2 mb-6">
             <button
               type="submit"
-              className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
+              className="w-auto px-20 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
             >
-              Kirim
+              Submit
             </button>
           </div>
         </form>
+      </div>
+      </div>
+      </div>
       </div>
     </div>
   );

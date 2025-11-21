@@ -12,6 +12,7 @@ import LolosButuhModal from "@/app/components/Popup/LolosButuhModal";
 import KeaktifanSiswaModal from "@/app/components/Popup/KeaktifanSiswaModal";
 import PengumumanKelulusanModal from "@/app/components/Popup/PengumumanKelulusanModal";
 import ArsipIjazahModal from "@/app/components/Popup/ArsipIjazahModal";
+import AksesRekomPipModal from "@/app/components/Popup/AksesRekomPipModal";
 
 const Layanan = () => {
   const [role, setRole] = useState("");
@@ -34,9 +35,9 @@ const Layanan = () => {
   const handleOpen = () => {
     if (!service) return;
 
-    if (service === "rekomPip") {
+    if (service === "") {
       // Langsung arahkan ke halaman /pip
-      router.push("/pip");
+      router.push("");
       return;
     }
 
@@ -51,6 +52,9 @@ const Layanan = () => {
         return <IzinAnakModal onClose={closeModal} />;
       case "lolosButuh":
         return <LolosButuhModal onClose={closeModal} />;
+      case "rekomPip":
+      window.location.href = "https://silalah.sdn2bokat.sch.id/pip";
+      return null;  
       case "keaktifanSiswa":
         return <KeaktifanSiswaModal onClose={closeModal} />;
       case "pengumumanKelulusan":
@@ -207,7 +211,7 @@ Pastikan nomor yang Anda masukkan benar.
                   { label: "Rapor Pendidikan", url: "/page/rapor_pendidikan", icon: "fluent-color:certificate-32", text: "w-12 h-12 mb-2" },
                   { label: "Kalender Kegiatan Sekolah", url: "/page/maintenance", icon: "fluent-color:calendar-edit-32", text: "w-12 h-12 mb-2" },
                   { label: "Kotak Saran dan Pengaduan", url: "/page/maintenance", icon: "fluent-color:drafts-16", text: "w-12 h-12 mb-2" },
-                  { label: "Permohonan Informasi Publik", url: "/page/maintenance", icon: "fluent-color:library-32", text: "w-12 h-12 mb-2" },
+                  { label: "Sistem Layanan Administrasi", url: "https://silalah.sdn2bokat.sch.id", icon: "fluent-color:library-32", text: "w-12 h-12 mb-2" },
                 ].map((item, idx) => (
                   <Link
                     key={idx}

@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import { X } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
@@ -74,31 +72,102 @@ export default function KeaktifanSiswaModal({ onClose }: KeaktifanSiswaModalProp
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-white w-full max-w-lg rounded-2xl shadow-lg overflow-hidden animate-fadeIn">
-        {/* Header */}
-        <div className="flex justify-between items-center px-6 py-4 border-b bg-header text-white">
-          <div className="flex items-center">
-            <Image
-              src="/images/layanan/profil.png"
-              alt="Layanan dan Informasi Sekolah"
-              width={26}
-              height={26}
-              className="mr-3"
-            />
-            <h4 className="text-xl font-semibold text-white">
-              Layanan Cek Keaktifan Peserta Didik
-            </h4>
-          </div>
-          <button
-            onClick={onClose}
-            className="hover:bg-blue-700 p-1 rounded transition-colors"
-          >
-            <X size={20} />
-          </button>
-        </div>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-auto"
+      role="dialog"
+      aria-modal="true"
+    >
 
         {/* Body */}
+        <div
+        className="relative bg-[#FFFFFF] w-full h-screen sm:p-4"
+        style={{ borderRadius: 0 }}
+        
+      >
+        {/* main content: two columns on large, stacked on small */}
+        <div className="sm:h-full flex flex-col">
+          <div className="h-full flex-1 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
+            {/* RIGHT */}
+            
+            <div className="bg-header sm:rounded-[18px] shadow-xl border-l 
+            sm:border-l-0 pl-5 py-4 sm:pt-7 sm:pl-8 overflow-hidden relative select-none" onContextMenu={(e) => e.preventDefault()}>
+          <div className="prose max-w-none">
+      {/* Logo kiri atas */}
+      <div className="flex">
+        <img
+          src="/images/logo/logo-white.svg"
+          alt="Layanan SD Negeri 2 Bokat"
+          className="h-6 sm:h-12"
+          
+        />
+        <div className='block sm:hidden'>
+          {/* Banner */}
+          <img
+            src="/images/layanan/img_login_mobi.png"
+            alt="Banner Layanan"
+            className="
+              w-42
+              absolute
+              right-0 bottom-0
+            "
+          />
+        </div> 
+      </div>
+
+      {/* Konten utama */}
+      <div className="flex sm:pl-8">
+        {/* Teks + Banner wrapper */}
+        <div className="relative flex pt-4 sm:pt-10">
+          {/* Teks H1 */}
+          <h1 className="text-[22px] sm:text-[50px] text-shadow font-semibold text-white/90 leading-tight z-10">
+            Selamat datang <br/>
+            di <b className="text-[#FFD60A]">Layanan<br/>Peserta <br className="hidden sm:block"/>Didik</b>
+          </h1>
+        </div>
+        <div className='hidden sm:block'>
+          {/* Banner */}
+          <img
+            src="/images/layanan/img_login.png"
+            alt="Banner Layanan"
+            className="
+              w-full
+              sm:self-start
+              absolute
+              right-0 bottom-0 
+            "
+          />
+        </div> 
+        </div>
+        </div>
+      </div>
+      {/* LEFT: form and logic */}
+<div className="flex flex-col gap-3 p-4 sm:pb-8 sm:px-8">
+  <div className="flex items-center mb-2 ml-[-18px]">
+  <a
+            onClick={onClose}
+            className="flex items-center gap-1 px-3 py-2 rounded-lg bg-transparent hover:bg-blue-50 transition-colors duration-200 cursor-pointer"
+        >
+        <Icon
+        icon="ion:chevron-back-outline"
+        className="w-5 h-5 font-semibold text-blue-400"
+         />
+        <span className="text-sm font-semibold text-blue-400">
+        Kembali
+        </span>
+          </a>
+          </div>
+  <div className="flex items-center mb-6">
+    <img
+       src="/images/layanan/ortu-siswa.png"
+       alt="Layanan Orang Tua dan Siswa"
+       className="h-10 sm:h-12 mr-3 sm:mr-4"
+     />
+    <span className="text-[17px] sm:text-[20px] font-semibold text-black leading-tight italic">
+      Cek Keaktifan Peserta Didik
+      <p className="bg-header border-blue-500 rounded-tl-xl rounded-br-xl px-3 py-[1.5px] text-center text-gray-100 
+      text-[10px] md:text-[14px] font-semibold italic text-shadow">Sistem Layanan Online Khusus Peserta Didik</p>
+    </span>
+  </div>
         {!loading && !hasil && (
           <form onSubmit={handleSubmit} className="p-6 space-y-4">
             {/* Jenis pencarian */}
@@ -214,17 +283,9 @@ export default function KeaktifanSiswaModal({ onClose }: KeaktifanSiswaModalProp
             )}
           </div>
         )}
-
-        {/* Footer modal selalu tampil */}
-        <div className="flex justify-end px-6 py-4 border-t bg-gray-50">
-          <button
-            type="button"
-            onClick={onClose}
-            className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-red-800 hover:text-white cursor-pointer transform transition duration-200 ease-in-out hover:scale-105 active:scale-95"
-          >
-            Tutup
-          </button>
+          </div>
         </div>
+      </div>
       </div>
     </div>
   );

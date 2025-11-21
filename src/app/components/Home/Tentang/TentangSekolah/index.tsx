@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+ 
 const TentangSekolah = () => {
     const [expanded, setExpanded] = useState(false);
   return (
