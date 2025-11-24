@@ -1,7 +1,6 @@
 // /app/api/whatsapp-webhook/route.js
 
 export async function GET(req) {
-  // WA Webhook Verification
   const url = new URL(req.url);
   const mode = url.searchParams.get("hub.mode");
   const token = url.searchParams.get("hub.verify_token");
@@ -9,12 +8,15 @@ export async function GET(req) {
 
   const VERIFY_TOKEN = process.env.WHATSAPP_VERIFY_TOKEN || "verify_me";
 
+  // WA Webhook Verification
   if (mode === "subscribe" && token === VERIFY_TOKEN) {
     return new Response(challenge, { status: 200 });
   }
 
-  return new Response("Webhook active", { status: 200 });
+  // Jika token salah → WA HARUS gagal
+  return new Response("Forbidden", { status: 403 });
 }
+
 
 export async function POST(req) {
   const data = await req.json().catch(() => null);
